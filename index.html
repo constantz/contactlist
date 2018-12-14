@@ -95,21 +95,17 @@
 			var i, ul, li, sNaam, node, textnode;
 			ul = document.getElementById("myList");
 			li = ul.getElementsByTagName('LI');
-			for (i = 0; i < li.length; i++){
-				node = li[i]; //alert(li[i].innerHTML);
-				li[i].parentNode.removeChild(li[i]); i--;
-			} 
+			while (li.length > 0){
+				li[0].parentNode.removeChild(li[0]);
+			}
 			for (i = 0; i < localStorage.length; i++){
 				sNaam = localStorage.getItem(i);
-				
 				node = document.createElement("LI");
 				textnode = document.createTextNode(sNaam);
 				node.appendChild(textnode);
-				ul.appendChild(node);
-								
+				ul.appendChild(node);					
 			} 
-		}
-		
+		}	
 	</script>
 </body>
 </html>

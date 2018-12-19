@@ -4,11 +4,13 @@
 	
 </head>
 <body onload="retrieveList()">
-	
+	<div>
+		<h1>Contactenlijst</h1>
+	</div>
 	<input id="myNewName" type="text" placeholder="nieuw">
 	<button onclick="voegIemandToe()">Voeg toe</button></br></br>
 	<!--button onclick="sorteerLijst()">A-Z Sorteer</button-->
-	<input id="myFilterBox" type="text" onkeyup="myFilterFunction()" placeholder="Filter..." >
+	
 	<ul id="myList">
 		<li>Christiaan</li>
 		<li>Douglas</li>
@@ -17,10 +19,12 @@
 		<li>Dhiradj</li>
 	</ul>
 	</br>
+	<input id="myFilterBox" type="text" onkeyup="myFilterFunction()" placeholder="Filter..." >
 	<!--button onclick="storeList()">Lijst opslaan</button>
 	<button onclick="retrieveList()">Lijst ophalen</button-->
+	
+	<p><small>Als u door filteren de lijst terugbrengt tot &#233&#233n veld, kunt u dit veld wissen met de wis-knop</small></p></br>
 	<button onclick="wisIemand()">wis &#233&#233n veld</button>
-	<p><small>Als u door filteren &#233&#233n veld selecteert, kunt u dit wissen met de wis-knop</small></p>
 
 	<script>
 	
@@ -32,7 +36,7 @@
 			for (i = 0; i < li.length; i++) {
 				if(li[i].style.display != "none"){j++; k = i;}; //telt hoeveel elementen niet verborgen zijn (j), bewaart laatste...
 			}													//...niet-verborgen element in k
-			if (j!=1){alert("Er moet precies \351\351n veld gefilterd zijn");
+			if (j!=1){alert("Er mag maar \351\351n veld geselecteerd zijn");
 				retrieveList();
 			}
 			else if (confirm("Weet u zeker dat u dit veld wilt wissen?")){

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+	
+</head>
 <body>
 	<input id="myFilterBox" type="text" onkeyup="myFilterFunction()" placeholder="Filter..." >
-	<input id="myNewName" type="text" placeholder="new">
-	<button onclick="voegIemandToe()">Add</button>
-	<button onclick="sorteerLijst()">Sorteer!</button>
+	<input id="myNewName" type="text" placeholder="nieuw">
+	<button onclick="voegIemandToe()">Voeg toe</button>
+	<button onclick="sorteerLijst()">A-Z Sorteer</button>
 	<ul id="myList">
 		<li>Christiaan</li>
 		<li>Douglas</li>
@@ -13,7 +16,7 @@
 		<li>Dhiradj</li>
 	</ul>
 	<button onclick="storeList()">Lijst opslaan</button>
-	<button onclick="retrieveList()">Terughalen</button>
+	<button onclick="retrieveList()">Lijst ophalen</button>
 	<button onclick="localStorage.clear()">Lijst wissen</button>
 	
 	<script>
@@ -86,8 +89,7 @@
 			ul = document.getElementById("myList");
 			li = ul.getElementsByTagName('LI');
 			for (i = 0; i < li.length; i++){
-				localStorage.setItem(i, li[i].innerHTML);
-				
+				localStorage.setItem(i, li[i].innerHTML);	
 			}
 		}
 		

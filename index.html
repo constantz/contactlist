@@ -2,15 +2,33 @@
 <html>
 <head>
 	<title>Contactenlijst</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css"-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	
+	<style type="text/css">
+    .content{
+		margin-top: 50px;
+		margin-bottom: 100px;
+    }
+	
+	</style>
 </head>
-<body onload="testLocalStorage()">
+<body><!-- onload="testLocalStorage()"-->
+<div class="content container">
 	<div>
 		<h1>Contactenlijst</h1>
+	</div>
+	<div>
+		<p class="lead">CodeGorilla Enschede</p>
 	</div>
 	<input id="myNewName" type="text" placeholder="nieuw">
 	<button onclick="voegIemandToe()">Voeg toe</button></br></br>
 	<!--button onclick="sorteerLijst()">A-Z Sorteer</button-->
-	
+	<div style="float: right;">
+		<img src="https://pbs.twimg.com/profile_images/931190512731807746/yO8Lcr9H_400x400.jpg">
+	</div>
 	<ul id="myList">
 		<li>Alex Coenen</li>
 		<li>Anke Ebbelink</li>
@@ -44,13 +62,16 @@
 		<li>Simone Wildenborg</li>
 		<li>Stas Sinyakov</li>
 	</ul>
+	
 	</br>
 	<input id="myFilterBox" type="text" onkeyup="myFilterFunction()" placeholder="Filter..." >
 	<!--button onclick="storeList()">Lijst opslaan</button>
 	<button onclick="retrieveList()">Lijst ophalen</button-->
 	
 	<p><small>Als u door filteren de lijst terugbrengt tot &#233&#233n veld, kunt u dit veld wissen met de wis-knop</small></p></br>
-	<button onclick="wisIemand()">wis &#233&#233n veld</button>
+	<button onclick="wisIemand()">wis &#233&#233n veld</button></br>
+</div>
+
 
 	<script>
 		function testLocalStorage(){
@@ -86,7 +107,7 @@
 		function voegIemandToe(){
 			var sNaam = document.getElementById("myNewName").value;
 			if (sNaam != ""){
-				var node = document.createElement("LI");
+				var node = document.createElement("LI"); node.className = "list-group-item";
 				var textnode = document.createTextNode(sNaam);
 				node.appendChild(textnode);
 				document.getElementById("myList").appendChild(node);   
@@ -94,7 +115,7 @@
 				sorteerLijst();
 				storeList();
 				}
-				else alert("Invoer mag niet leeg zijn");
+				else alert("Invoer mag niet leeg zijn!");
 		}
 		
 		function myFilterFunction(){

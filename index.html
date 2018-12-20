@@ -15,7 +15,7 @@
 	
 	</style>
 </head>
-<body><!-- onload="testLocalStorage()"-->
+<body onload="testLocalStorage()">
 <div class="content container">
 	<div>
 		<h1>Contactenlijst</h1>
@@ -107,7 +107,7 @@
 		function voegIemandToe(){
 			var sNaam = document.getElementById("myNewName").value;
 			if (sNaam != ""){
-				var node = document.createElement("LI"); node.className = "list-group-item";
+				var node = document.createElement("LI");
 				var textnode = document.createTextNode(sNaam);
 				node.appendChild(textnode);
 				document.getElementById("myList").appendChild(node);   
